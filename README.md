@@ -3,7 +3,7 @@ A simple tool to brute force a password for a password-protected PKCS#12 (PFX/P1
   
 **Usage**
 
-* You must supply your own wordlist for the brute forcing in text format, using whatever tool you prefer
+* You must supply your own wordlist for the brute forcing in text format, generated using whatever tool you prefer
 * Supply the path to the PKCS12 file, and your wordlist of guesses to the script
     
 
