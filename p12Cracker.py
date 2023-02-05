@@ -1,7 +1,7 @@
 import colorama
 from colorama import Fore, Back, Style
 import sys
-from OpenSSL import crypto
+from cryptography.hazmat.primitives.serialization import pkcs12
 
 colorama.init(autoreset=True)
 
@@ -42,8 +42,8 @@ with open(wordlist, 'r') as fp:
         spin()
         guess = line.strip()
         try:
-            p12 = crypto.load_pkcs12(open(p12FilePath, 'rb').read(), guess.encode('utf8'))
-        except crypto.Error as e:
+            p12 = pkcs12.load_pkcs12(open(p12FilePath, 'rb').read(), guess.encode('utf8'))
+        except ValueError as e:
             p12 = None
         if p12:
             print(Fore.BLUE + '****************************************************************\n')
